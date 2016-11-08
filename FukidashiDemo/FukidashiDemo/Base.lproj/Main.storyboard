@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vh-Vh-Vos" customClass="CanvansView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8vh-Vh-Vos" secondAttribute="height" multiplier="1:1" id="fDd-0v-BDZ"/>
+                                </constraints>
+                            </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-90" minimumValue="-180" maximumValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="mCC-20-bDZ">
+                                <connections>
+                                    <action selector="angleChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="ICk-gk-ES1"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minimumValue="60" maximumValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="Fwm-Jh-6vd">
+                                <connections>
+                                    <action selector="widthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="e12-bk-uqs"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minimumValue="30" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="PMj-gX-xNi">
+                                <connections>
+                                    <action selector="heightChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="iuk-GD-Or1"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="65" minimumValue="50" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3tk-B6-RsG">
+                                <connections>
+                                    <action selector="arrowHeightChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="uWV-w1-IBr"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82983106575799037" green="0.84777488624810682" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fwm-Jh-6vd" firstAttribute="top" secondItem="mCC-20-bDZ" secondAttribute="bottom" constant="20" id="2Q0-hJ-x5o"/>
+                            <constraint firstItem="mCC-20-bDZ" firstAttribute="top" secondItem="8vh-Vh-Vos" secondAttribute="bottom" constant="20" id="2vO-s9-7dT"/>
+                            <constraint firstItem="8vh-Vh-Vos" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6U7-tI-C7c"/>
+                            <constraint firstItem="3tk-B6-RsG" firstAttribute="top" secondItem="Fwm-Jh-6vd" secondAttribute="bottom" constant="11" id="9YY-CN-P4N"/>
+                            <constraint firstAttribute="trailing" secondItem="3tk-B6-RsG" secondAttribute="trailing" constant="20" id="AXt-Hb-VTW"/>
+                            <constraint firstItem="PMj-gX-xNi" firstAttribute="top" secondItem="Fwm-Jh-6vd" secondAttribute="top" id="FpH-Is-tOv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mCC-20-bDZ" secondAttribute="trailing" id="Isd-2A-1fa"/>
+                            <constraint firstItem="Fwm-Jh-6vd" firstAttribute="leading" secondItem="PMj-gX-xNi" secondAttribute="trailing" constant="30" id="VF1-Re-ffi"/>
+                            <constraint firstItem="8vh-Vh-Vos" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bDP-Ze-e8J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fwm-Jh-6vd" secondAttribute="trailing" id="mhS-Pg-OUM"/>
+                            <constraint firstItem="8vh-Vh-Vos" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zvO-26-pXj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvansView" destination="8vh-Vh-Vos" id="ZOR-Ux-UFx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
+        </scene>
+    </scenes>
+</document>
